@@ -14,7 +14,7 @@
 ## About me
 
 - 🎓 Studying Computer Science Engineering at the Politecnico di Milano
-- 🇮🇹 Based in Italy
+- 🌍 Based in Italy
 - 🛠️ Interested in building useful software, from backend systems to interactive applications
 
 ## Projects
