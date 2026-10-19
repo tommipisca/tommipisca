@@ -1,7 +1,6 @@
 # Hi, I'm Tommaso 👋
 
-Computer Science Engineering student at **Politecnico di Milano** (BSc, 2023 – 2026), based in Italy.
-I like building tools that people could actually use, with attention to UI and accessibility.
+Computer Science Engineering student at the Politecnico di Milano, pursuing a BSc (2023–2026) and an MSc (2026-2028) in Computer Science and Engineering. Based in Italy.
 
 ## Projects
 
@@ -17,4 +16,5 @@ I like building tools that people could actually use, with attention to UI and a
 
 ## Contact
 
+- email: [tommaso.piscaglia@gmail.com](tommaso.piscaglia@gmail.com)
 - LinkedIn: [**Tommaso Piscaglia**](https://www.linkedin.com/in/tommaso-piscaglia-75986832b)
