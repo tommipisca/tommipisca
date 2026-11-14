@@ -22,6 +22,7 @@
 
 | Project | Description | Technologies |
 | --- | --- | --- |
+| [Pinboard](https://github.com/tommipisca/Pinboard) | Windows app that pins macOS-style widgets to the desktop (clocks, calendar, countdown, system stats, photo frame, now playing): pick them from a catalog with live previews, customize size, theme and colors, and place them anywhere. Updates automatically from GitHub releases. | C#, .NET 8, WPF, Velopack |
 | [ExamsTrack](https://github.com/tommipisca/ExamsTrack) | iOS, iPadOS and Windows app for university students: plan exams and study tasks, track the grade average and estimate the graduation mark. Includes widgets, Live Activities, Shortcuts actions and sync between iPhone, iPad and PC. | Swift, SwiftUI, WidgetKit, App Intents, Electron |
 | [Expenses](https://github.com/tommipisca/Expenses) | iOS and iPadOS app to track monthly spending by tag, with budgets and alerts, recurring expenses, Home Screen and Lock Screen widgets, Wallet automation through Shortcuts and sync between devices. | Swift, SwiftUI, WidgetKit, App Intents |
 | [PaperSieve](https://github.com/tommipisca/PaperSieve) | Search arXiv across categories, filter papers by keyword, author or category, save favorites, and export them as BibTeX. Designed with WCAG 2.1 AA accessibility in mind. | Python, Flask, Jinja2, SQLite |
@@ -32,7 +33,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=swift,py,java,c,js,html,css,flask,fastapi,electron,sqlite,threejs,linux,git,figma&perline=8" alt="Swift, Python, Java, C, JavaScript, HTML, CSS, Flask, FastAPI, Electron, SQLite, Three.js, Linux, Git and Figma">
+    <img src="https://skillicons.dev/icons?i=swift,py,java,c,cs,dotnet,js,html,css,flask,fastapi,electron,sqlite,threejs,linux,git,figma&perline=9" alt="Swift, Python, Java, C, C#, .NET, JavaScript, HTML, CSS, Flask, FastAPI, Electron, SQLite, Three.js, Linux, Git and Figma">
   </a>
 </p>
 
@@ -41,6 +42,8 @@
   <img src="https://img.shields.io/badge/WidgetKit-6C63FF?style=flat-square" alt="WidgetKit">
   <img src="https://img.shields.io/badge/App_Intents-0A84FF?style=flat-square" alt="App Intents">
   <img src="https://img.shields.io/badge/xtool-0EA5A4?style=flat-square" alt="xtool">
+  <img src="https://img.shields.io/badge/WPF-512BD4?style=flat-square" alt="WPF">
+  <img src="https://img.shields.io/badge/Velopack-0EA5A4?style=flat-square" alt="Velopack">
   <img src="https://img.shields.io/badge/VHDL-4B5563?style=flat-square" alt="VHDL">
   <img src="https://img.shields.io/badge/Jinja2-B41717?style=flat-square" alt="Jinja2">
   <img src="https://img.shields.io/badge/SQLModel-2563EB?style=flat-square" alt="SQLModel">
