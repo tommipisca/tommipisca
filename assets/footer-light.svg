@@ -12,5 +12,5 @@
   <g clip-path="url(#fc)">
     <path class="w2" fill="url(#fg)" fill-opacity="0.45" d="M-60 40 Q 75 10 210 40 T 480 40 T 750 40 T 1020 40 V 120 H -60 Z"/>
     <path class="w1" fill="url(#fg)" d="M-60 60 Q 90 25 240 60 T 540 60 T 840 60 T 1140 60 V 120 H -60 Z"/>
-    <text x="450" y="98" text-anchor="middle" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-weight="600" font-size="15" letter-spacing="1.5">THANKS FOR STOPPING BY</text>
+    <text x="450" y="98" text-anchor="middle" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-weight="600" font-size="17">Thanks for stopping by</text>
   </g></svg>

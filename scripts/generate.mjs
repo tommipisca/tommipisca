@@ -18,14 +18,10 @@ const NOW = new Date();
 const THEMES = {
   light: {
     bg: '#ffffff', fg: '#1f2328', muted: '#59636e', border: '#d1d9e0', subtle: '#f6f8fa', link: '#0969da',
-    violet: '#6C63FF', teal: '#0EA5A4', navy: '#1F4E79', snake: '#6C63FF',
-    greens: ['#9be9a8', '#40c463', '#30a14e', '#216e39'],
-  },
+    violet: '#6C63FF', teal: '#0EA5A4', navy: '#1F4E79', pac: '#f2b705',  },
   dark: {
     bg: '#0d1117', fg: '#f0f6fc', muted: '#9198a1', border: '#3d444d', subtle: '#151b23', link: '#4493f8',
-    violet: '#8b84ff', teal: '#2cc5c3', navy: '#5b8fc4', snake: '#a39dff',
-    greens: ['#0e4429', '#006d32', '#26a641', '#39d353'],
-  },
+    violet: '#8b84ff', teal: '#2cc5c3', navy: '#5b8fc4', pac: '#ffd43b',  },
 };
 const LANG_COLORS = {
   'C#': '#178600', Swift: '#F05138', Python: '#3572A5', Java: '#b07219', JavaScript: '#f1e05a', TypeScript: '#3178c6',
@@ -102,7 +98,7 @@ async function loadRepos() {
 }
 
 // ---------- shared pieces ----------
-// Animated gradient bar on top of a card, clipped to the card's rounded shape.
+// Gradient bar on top of a card, clipped to the card's rounded shape (static: the chomp dividers are the main motion).
 const topBar = (t, w, id) => `
   <defs>
     <linearGradient id="${id}g" x1="0" x2="1" y1="0" y2="0">
@@ -111,8 +107,8 @@ const topBar = (t, w, id) => `
     </linearGradient>
     <clipPath id="${id}c"><rect x="0.5" y="0.5" width="${w - 1}" height="100%" rx="12"/></clipPath>
   </defs>
-  <g clip-path="url(#${id}c)"><rect class="bar" x="0" y="0" width="${w * 2}" height="3" fill="url(#${id}g)"/></g>`;
-const barStyle = (w) => `.bar { animation: sweep 6s linear infinite; } @keyframes sweep { from { transform: translateX(0); } to { transform: translateX(-${w}px); } }`;
+  <g clip-path="url(#${id}c)"><rect x="0" y="0" width="${w * 2}" height="3" fill="url(#${id}g)"/></g>`;
+const barStyle = () => '';
 
 // ---------- header ----------
 function header(t) {
@@ -132,7 +128,7 @@ function header(t) {
     <path class="w1" fill="#fff" fill-opacity="0.12" d="M-60 150 Q 90 110 240 150 T 540 150 T 840 150 T 1140 150 V 200 H -60 Z"/>
     <path class="w2" fill="#fff" fill-opacity="0.18" d="M-60 170 Q 75 140 210 170 T 480 170 T 750 170 T 1020 170 V 200 H -60 Z"/>
     <text x="450" y="92" text-anchor="middle" fill="#fff" font-family="${FONT}" font-weight="700" font-size="46">Hi, I'm Tommaso 👋</text>
-    <text x="450" y="128" text-anchor="middle" fill="#fff" fill-opacity="0.85" font-family="${FONT}" font-weight="600" font-size="17" letter-spacing="2">COMPUTER SCIENCE ENGINEERING · POLIMI</text>
+    <text x="450" y="130" text-anchor="middle" fill="#fff" fill-opacity="0.88" font-family="${FONT}" font-weight="500" font-size="20">Computer Science Engineering, Politecnico di Milano</text>
   </g>`, "Hi, I'm Tommaso");
 }
 
@@ -152,47 +148,48 @@ function footer(t) {
   <g clip-path="url(#fc)">
     <path class="w2" fill="url(#fg)" fill-opacity="0.45" d="M-60 40 Q 75 10 210 40 T 480 40 T 750 40 T 1020 40 V 120 H -60 Z"/>
     <path class="w1" fill="url(#fg)" d="M-60 60 Q 90 25 240 60 T 540 60 T 840 60 T 1140 60 V 120 H -60 Z"/>
-    <text x="450" y="98" text-anchor="middle" fill="#fff" font-family="${FONT}" font-weight="600" font-size="15" letter-spacing="1.5">THANKS FOR STOPPING BY</text>
+    <text x="450" y="98" text-anchor="middle" fill="#fff" font-family="${FONT}" font-weight="600" font-size="17">Thanks for stopping by</text>
   </g>`, 'Thanks for stopping by');
 }
 
-// ---------- snake dividers ----------
+// ---------- chomp dividers ----------
+// A yellow character with an opening and closing mouth crosses each divider, eating the dots.
 // Each divider is its own image; divider i starts after i * SLOT seconds and runs in the opposite
-// direction of the previous one, so together they look like one snake zigzagging down the page.
-const SNAKES = 6, SLOT = 1.6, CYCLE = SNAKES * SLOT, START = -120, END = 1020;
-function snake(t, i) {
-  let seed = 11 + i * 97;
-  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+// direction of the previous one, so together they look like one character zigzagging down the page.
+const DIVIDERS = 6, SLOT = 4, CYCLE = DIVIDERS * SLOT, START = -120, END = 1020;
+function chomp(t, i) {
   const left = i % 2 === 1;
   const pct = ((SLOT / CYCLE) * 100).toFixed(3);
-  let pellets = '';
+  let dots = '';
   for (let x = 15; x < 900; x += 30) {
-    const at = ((x - START) / (END - START)) * SLOT + i * SLOT;
-    pellets += `<rect class="p" x="${x - 5}" y="7" width="10" height="10" rx="2" fill="${t.greens[Math.floor(rnd() * 4)]}" style="animation-delay:${at.toFixed(2)}s"/>`;
+    const at = ((x + 2 - START) / (END - START)) * SLOT + i * SLOT;
+    const big = x % 150 === 135;
+    dots += `<circle class="p" cx="${x}" cy="12" r="${big ? 4.5 : 3}" fill="${(x / 30) % 2 < 1 ? t.violet : t.teal}" style="animation-delay:${at.toFixed(2)}s"/>`;
   }
-  let body = '';
-  for (let k = 5; k >= 0; k--) {
-    const s = 12 - k * 1.3;
-    body += `<rect x="${(-k * 14 - s).toFixed(1)}" y="${(12 - s / 2).toFixed(1)}" width="${s.toFixed(1)}" height="${s.toFixed(1)}" rx="3" fill="${t.snake}" fill-opacity="${(1 - k * 0.12).toFixed(2)}"/>`;
-  }
+  const body = `<g transform="translate(-12 12)">
+      <g class="jt"><path d="M0 0 L10 0 A10 10 0 0 0 -10 0 Z" fill="${t.pac}"/><circle cx="1.5" cy="-5.5" r="1.6" fill="#1f2328"/></g>
+      <path class="jb" d="M0 0 L10 0 A10 10 0 0 1 -10 0 Z" fill="${t.pac}"/>
+    </g>`;
   return svg(900, 24, `
   <style>
-    .s { transform: translateX(${START}px); animation: slither ${CYCLE}s linear ${(i * SLOT).toFixed(2)}s infinite; }
-    @keyframes slither { 0% { transform: translateX(${START}px); } ${pct}% { transform: translateX(${END}px); } 100% { transform: translateX(${END}px); } }
+    .s { transform: translateX(${START}px); animation: move ${CYCLE}s linear ${(i * SLOT).toFixed(2)}s infinite; }
+    @keyframes move { 0% { transform: translateX(${START}px); } ${pct}% { transform: translateX(${END}px); } 100% { transform: translateX(${END}px); } }
+    .jt { animation: jt .35s ease-in-out infinite alternate; } @keyframes jt { to { transform: rotate(-38deg); } }
+    .jb { animation: jb .35s ease-in-out infinite alternate; } @keyframes jb { to { transform: rotate(38deg); } }
     .p { transform-box: fill-box; transform-origin: center; animation: eat ${CYCLE}s linear infinite; }
     @keyframes eat { 0% { opacity: 0; transform: scale(.2); } 62% { opacity: 0; transform: scale(.2); } 72%, 100% { opacity: 1; transform: scale(1); } }
     ${REDUCED}
   </style>
-  <g${left ? ' transform="translate(900 0) scale(-1 1)"' : ''}>${pellets}<g class="s">${body}</g></g>`, 'Snake divider');
+  <g${left ? ' transform="translate(900 0) scale(-1 1)"' : ''}>${dots}<g class="s">${body}</g></g>`, 'Divider');
 }
 
 // ---------- about me ----------
 const ABOUT = [
-  { key: 'Studying', value: 'Computer Science Engineering at the Politecnico di Milano', color: 'violet',
+  { key: 'Degree path', value: 'BSc 2023–2026 → MSc 2026–2028', color: 'violet',
     icon: `<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path class="swing" d="M22 9v6"/>` },
   { key: 'Based in', value: 'Italy', color: 'teal',
     icon: `<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><ellipse class="spin" cx="12" cy="12" rx="4" ry="9"/>` },
-  { key: 'Building', value: 'Software people actually use: backend services, desktop tools, mobile apps', color: 'navy',
+  { key: 'Building', value: "Tools I'd use myself: desktop widgets, study planners, dashboards", color: 'navy',
     icon: `<path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path class="blink" d="M13.5 5l-3 14"/>` },
   { key: 'Curious about', value: 'New languages, frameworks and how things work under the hood', color: 'teal',
     icon: `<path d="M12 21v-9"/><path class="grow" d="M12 12c0-4 3-6 7-6c0 4-3 6-7 6z"/><path class="grow g2" d="M12 14c0-3-2.5-5-6-5c0 3 2.5 5 6 5z"/>` },
@@ -208,19 +205,20 @@ function about(t) {
       <g transform="translate(0 0)">${topBar(t, CW, `a${i}`).replace('height="100%"', `height="${CH - 1}"`)}</g>
       <rect x="16" y="18" width="40" height="40" rx="10" fill="${c}" fill-opacity="0.14"/>
       <g transform="translate(25 27)" fill="none" stroke="${c}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${a.icon}</g>
-      <text x="72" y="32" font-family="${FONT}" font-size="11" font-weight="600" letter-spacing="1" fill="${t.muted}">${esc(a.key.toUpperCase())}</text>
+      <text x="72" y="33" font-family="${FONT}" font-size="12.5" font-weight="600" fill="${t.muted}">${esc(a.key)}</text>
       ${lines.map((l, j) => `<text x="72" y="${53 + j * 19}" font-family="${FONT}" font-size="14" fill="${t.fg}">${esc(l)}</text>`).join('')}
     </g>`;
   }).join('');
   return svg(W, 2 * CH + 14, `
   <style>
     ${barStyle(CW)}
-    .swing { transform-origin: 22px 9px; animation: swing 2.4s ease-in-out infinite; }
+    /* each icon plays once on load, then rests */
+    .swing { transform-origin: 22px 9px; animation: swing 1.2s ease-in-out 2; }
     @keyframes swing { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(18deg); } }
-    .spin { transform-origin: 12px 12px; animation: spin 4s ease-in-out infinite; }
+    .spin { transform-origin: 12px 12px; animation: spin 2s ease-in-out 1; }
     @keyframes spin { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.15); } }
-    .blink { animation: blink 1.2s steps(1) infinite; } @keyframes blink { 50% { opacity: 0; } }
-    .grow { transform-origin: 12px 13px; animation: grow 3s ease-in-out infinite; } .g2 { animation-delay: .4s; }
+    .blink { animation: blink 1.2s steps(1) 3; } @keyframes blink { 50% { opacity: 0; } }
+    .grow { transform-origin: 12px 13px; animation: grow 1.5s ease-in-out 1; } .g2 { animation-delay: .4s; }
     @keyframes grow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
     ${REDUCED}
   </style>${cards}`, 'About me');
@@ -238,7 +236,7 @@ function now(t, repo) {
   <rect x="0.5" y="0.5" width="899" height="91" rx="12" fill="${t.subtle}" stroke="${t.border}"/>
   <circle class="ring" cx="26" cy="46" r="5" fill="${t.teal}"/>
   <circle cx="26" cy="46" r="5" fill="${t.teal}"/>
-  <text x="48" y="29" font-family="${FONT}" font-size="11" font-weight="600" letter-spacing="1" fill="${t.muted}">CURRENTLY WORKING ON</text>
+  <text x="48" y="29" font-family="${FONT}" font-size="12.5" font-weight="600" fill="${t.muted}">Currently working on</text>
   <text x="48" y="52" font-family="${FONT}" font-size="15" fill="${t.fg}"><tspan font-weight="700" fill="${t.link}">${esc(repo.displayName)}</tspan><tspan fill="${t.muted}"> · last push ${esc(ago(repo.pushed_at))}</tspan></text>
   <text x="48" y="73" font-family="${MONO}" font-size="12.5" fill="${t.muted}">“${esc(msg)}”</text>`, `Currently working on ${repo.displayName}`);
 }
@@ -277,7 +275,7 @@ function card(t, r, idx) {
 
 // ---------- stats ----------
 function languages(t, langs) {
-  const W = 440, H = 200;
+  const W = 900, H = 160;
   let x = 20, bar = '';
   const barW = W - 40;
   langs.forEach(([l, p], i) => {
@@ -286,7 +284,7 @@ function languages(t, langs) {
     x += w + 2;
   });
   const list = langs.map(([l, p], i) => {
-    const cx = 20 + (i % 2) * 200, cy = 92 + Math.floor(i / 2) * 24;
+    const cx = 20 + (i % 4) * 215, cy = 98 + Math.floor(i / 4) * 28;
     return `<circle cx="${cx + 5}" cy="${cy - 4}" r="5" fill="${LANG_COLORS[l] || LANG_COLORS.Other}"/>
       <text x="${cx + 16}" y="${cy}" font-family="${FONT}" font-size="12.5" fill="${t.fg}">${esc(l)} <tspan fill="${t.muted}">${p.toFixed(1)}%</tspan></text>`;
   }).join('');
@@ -298,20 +296,6 @@ function languages(t, langs) {
   <g clip-path="url(#lb)"><g class="grow">${bar}</g></g>
   ${list}`, 'Most used languages');
 }
-function glance(t, s) {
-  const W = 440, H = 200;
-  const tiles = s.map(([n, l], i) => {
-    const x = 20 + (i % 2) * 200, y = 86 + Math.floor(i / 2) * 64;
-    return `<text class="n" style="animation-delay:${i * 0.15}s" x="${x}" y="${y}" font-family="${FONT}" font-size="28" font-weight="700" fill="${t.fg}">${esc(n)}</text>
-      <text x="${x}" y="${y + 20}" font-family="${FONT}" font-size="12" fill="${t.muted}">${esc(l)}</text>`;
-  }).join('');
-  return svg(W, H, `
-  <style>.n { animation: rise .8s ease-out both; } @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } } ${REDUCED}</style>
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="12" fill="${t.bg}" stroke="${t.border}"/>
-  <text x="20" y="34" font-family="${FONT}" font-size="15" font-weight="700" fill="${t.violet}">At a glance</text>
-  ${tiles}`, 'At a glance');
-}
-
 // ---------- README ----------
 const picture = (base, alt, width) =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/${base}-dark.svg"><img src="./assets/${base}-light.svg" alt="${esc(alt)}"${width ? ` width="${width}"` : ''}></picture>`;
@@ -329,7 +313,7 @@ if (!repos.length) throw new Error('No public repositories found');
 await saveThemed('header', header);
 await saveThemed('footer', footer);
 await saveThemed('about', about);
-for (let i = 0; i < SNAKES; i++) await saveThemed(`snake-${i}`, (t) => snake(t, i));
+for (let i = 0; i < DIVIDERS; i++) await saveThemed(`divider-${i}`, (t) => chomp(t, i));
 await saveThemed('now', (t) => now(t, repos[0]));
 
 const slug = (r) => r.name.toLowerCase();
@@ -343,12 +327,6 @@ const top = sorted.slice(0, 7).map(([l, b]) => [l, (b / total) * 100]);
 const rest = sorted.slice(7).reduce((a, [, b]) => a + b, 0);
 if (rest) top.push(['Other', (rest / total) * 100]);
 await saveThemed('languages', (t) => languages(t, top));
-await saveThemed('glance', (t) => glance(t, [
-  [String(repos.length), 'public projects'],
-  [String(repos.reduce((n, r) => n + r.stargazers_count, 0)), 'stars earned'],
-  [String(repos.filter((r) => r.latestTag).length), 'apps with releases'],
-  [String(repos.reduce((n, r) => n + r.downloads, 0)), 'release downloads'],
-]));
 
 let md = await readFile(join(ROOT, 'README.md'), 'utf8');
 md = replaceBlock(md, 'NOW', `<p align="center">\n  <a href="${repos[0].html_url}">${picture('now', `Currently working on ${repos[0].displayName}`, '100%')}</a>\n</p>`);

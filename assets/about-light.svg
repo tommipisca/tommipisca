@@ -1,12 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="198" viewBox="0 0 900 198" role="img" aria-label="About me">
   <style>
-    .bar { animation: sweep 6s linear infinite; } @keyframes sweep { from { transform: translateX(0); } to { transform: translateX(-441px); } }
-    .swing { transform-origin: 22px 9px; animation: swing 2.4s ease-in-out infinite; }
+    
+    /* each icon plays once on load, then rests */
+    .swing { transform-origin: 22px 9px; animation: swing 1.2s ease-in-out 2; }
     @keyframes swing { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(18deg); } }
-    .spin { transform-origin: 12px 12px; animation: spin 4s ease-in-out infinite; }
+    .spin { transform-origin: 12px 12px; animation: spin 2s ease-in-out 1; }
     @keyframes spin { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.15); } }
-    .blink { animation: blink 1.2s steps(1) infinite; } @keyframes blink { 50% { opacity: 0; } }
-    .grow { transform-origin: 12px 13px; animation: grow 3s ease-in-out infinite; } .g2 { animation-delay: .4s; }
+    .blink { animation: blink 1.2s steps(1) 3; } @keyframes blink { 50% { opacity: 0; } }
+    .grow { transform-origin: 12px 13px; animation: grow 1.5s ease-in-out 1; } .g2 { animation-delay: .4s; }
     @keyframes grow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style><g transform="translate(0 0)">
@@ -19,11 +20,11 @@
     </linearGradient>
     <clipPath id="a0c"><rect x="0.5" y="0.5" width="440" height="91" rx="12"/></clipPath>
   </defs>
-  <g clip-path="url(#a0c)"><rect class="bar" x="0" y="0" width="882" height="3" fill="url(#a0g)"/></g></g>
+  <g clip-path="url(#a0c)"><rect x="0" y="0" width="882" height="3" fill="url(#a0g)"/></g></g>
       <rect x="16" y="18" width="40" height="40" rx="10" fill="#6C63FF" fill-opacity="0.14"/>
       <g transform="translate(25 27)" fill="none" stroke="#6C63FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path class="swing" d="M22 9v6"/></g>
-      <text x="72" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="1" fill="#59636e">STUDYING</text>
-      <text x="72" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">Computer Science Engineering at the Politecnico di</text><text x="72" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">Milano</text>
+      <text x="72" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#59636e">Degree path</text>
+      <text x="72" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">BSc 2023–2026 → MSc 2026–2028</text>
     </g><g transform="translate(459 0)">
       <rect x="0.5" y="0.5" width="440" height="91" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
       <g transform="translate(0 0)">
@@ -34,10 +35,10 @@
     </linearGradient>
     <clipPath id="a1c"><rect x="0.5" y="0.5" width="440" height="91" rx="12"/></clipPath>
   </defs>
-  <g clip-path="url(#a1c)"><rect class="bar" x="0" y="0" width="882" height="3" fill="url(#a1g)"/></g></g>
+  <g clip-path="url(#a1c)"><rect x="0" y="0" width="882" height="3" fill="url(#a1g)"/></g></g>
       <rect x="16" y="18" width="40" height="40" rx="10" fill="#0EA5A4" fill-opacity="0.14"/>
       <g transform="translate(25 27)" fill="none" stroke="#0EA5A4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><ellipse class="spin" cx="12" cy="12" rx="4" ry="9"/></g>
-      <text x="72" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="1" fill="#59636e">BASED IN</text>
+      <text x="72" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#59636e">Based in</text>
       <text x="72" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">Italy</text>
     </g><g transform="translate(0 106)">
       <rect x="0.5" y="0.5" width="440" height="91" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
@@ -49,11 +50,11 @@
     </linearGradient>
     <clipPath id="a2c"><rect x="0.5" y="0.5" width="440" height="91" rx="12"/></clipPath>
   </defs>
-  <g clip-path="url(#a2c)"><rect class="bar" x="0" y="0" width="882" height="3" fill="url(#a2g)"/></g></g>
+  <g clip-path="url(#a2c)"><rect x="0" y="0" width="882" height="3" fill="url(#a2g)"/></g></g>
       <rect x="16" y="18" width="40" height="40" rx="10" fill="#1F4E79" fill-opacity="0.14"/>
       <g transform="translate(25 27)" fill="none" stroke="#1F4E79" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path class="blink" d="M13.5 5l-3 14"/></g>
-      <text x="72" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="1" fill="#59636e">BUILDING</text>
-      <text x="72" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">Software people actually use: backend services,</text><text x="72" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">desktop tools, mobile apps</text>
+      <text x="72" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#59636e">Building</text>
+      <text x="72" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">Tools I'd use myself: desktop widgets, study</text><text x="72" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">planners, dashboards</text>
     </g><g transform="translate(459 106)">
       <rect x="0.5" y="0.5" width="440" height="91" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
       <g transform="translate(0 0)">
@@ -64,9 +65,9 @@
     </linearGradient>
     <clipPath id="a3c"><rect x="0.5" y="0.5" width="440" height="91" rx="12"/></clipPath>
   </defs>
-  <g clip-path="url(#a3c)"><rect class="bar" x="0" y="0" width="882" height="3" fill="url(#a3g)"/></g></g>
+  <g clip-path="url(#a3c)"><rect x="0" y="0" width="882" height="3" fill="url(#a3g)"/></g></g>
       <rect x="16" y="18" width="40" height="40" rx="10" fill="#0EA5A4" fill-opacity="0.14"/>
       <g transform="translate(25 27)" fill="none" stroke="#0EA5A4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path class="grow" d="M12 12c0-4 3-6 7-6c0 4-3 6-7 6z"/><path class="grow g2" d="M12 14c0-3-2.5-5-6-5c0 3 2.5 5 6 5z"/></g>
-      <text x="72" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="1" fill="#59636e">CURIOUS ABOUT</text>
+      <text x="72" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#59636e">Curious about</text>
       <text x="72" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">New languages, frameworks and how things work</text><text x="72" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">under the hood</text>
     </g></svg>
