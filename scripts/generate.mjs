@@ -4,7 +4,7 @@
 //
 // Usage: GITHUB_TOKEN=... node scripts/generate.mjs
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir, unlink } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -79,7 +79,14 @@ async function gh(path) {
 
 async function loadRepos() {
   const all = await gh(`/users/${USER}/repos?type=owner&per_page=100&sort=pushed`);
-  const repos = all.filter((r) => !r.private && r.visibility === 'public' && !r.fork && !r.archived && !config.exclude.includes(r.name));
+  // Only the repositories listed in scripts/projects.txt are shown (one name per line, # for comments).
+  const wanted = (await readFile(join(ROOT, 'scripts', 'projects.txt'), 'utf8'))
+    .split(/\r?\n/).map((l) => l.replace(/#.*/, '').trim()).filter(Boolean);
+  const wantedLower = new Set(wanted.map((n) => n.toLowerCase()));
+  const repos = all.filter((r) => !r.private && r.visibility === 'public' && !r.fork && !config.exclude.includes(r.name)
+    && wantedLower.has(r.name.toLowerCase()));
+  const found = new Set(repos.map((r) => r.name.toLowerCase()));
+  for (const n of wanted) if (!found.has(n.toLowerCase())) console.warn(`Skipped "${n}": not a public, non-fork repository of ${USER}`);
   for (const r of repos) {
     const o = config.overrides[r.name] || {};
     r.displayName = o.name || r.name;
@@ -321,6 +328,9 @@ await saveThemed('now', (t) => now(t, repos[0]));
 
 const slug = (r) => r.name.toLowerCase();
 for (const [i, r] of repos.entries()) await saveThemed(`card-${slug(r)}`, (t) => card(t, r, i));
+// Remove cards of projects no longer listed in projects.txt.
+const keep = new Set(repos.flatMap((r) => Object.keys(THEMES).map((t) => `card-${slug(r)}-${t}.svg`)));
+for (const f of await readdir(OUT)) if (f.startsWith('card-') && !keep.has(f)) await unlink(join(OUT, f));
 
 const bytes = {};
 for (const r of repos) for (const [l, b] of Object.entries(r.languagesBytes)) bytes[l] = (bytes[l] || 0) + b;
@@ -333,8 +343,11 @@ await saveThemed('languages', (t) => languages(t, top));
 
 let md = await readFile(join(ROOT, 'README.md'), 'utf8');
 md = replaceBlock(md, 'NOW', `<p align="center">\n  <a href="${repos[0].html_url}">${picture('now', `Currently working on ${repos[0].displayName}`, '100%')}</a>\n</p>`);
-const cards = repos.map((r) => `  <a href="${r.html_url}">${picture(`card-${slug(r)}`, r.displayName, '49%')}</a>`).join('\n');
-md = replaceBlock(md, 'PROJECTS', `<p align="center">\n${cards}\n</p>`);
+// Cards go two per row; each row is its own line, so an odd last card ends up centered on its own.
+const cardLinks = repos.map((r) => `<a href="${r.html_url}">${picture(`card-${slug(r)}`, r.displayName, '49%')}</a>`);
+const rows = [];
+for (let i = 0; i < cardLinks.length; i += 2) rows.push('  ' + cardLinks.slice(i, i + 2).join('\n  '));
+md = replaceBlock(md, 'PROJECTS', `<p align="center">\n${rows.join('\n  <br>\n')}\n</p>`);
 md = replaceBlock(md, 'UPDATED', `<p align="center"><sub>Updated automatically every night · last run ${fmtDate(NOW)}</sub></p>`);
 await writeFile(join(ROOT, 'README.md'), md, 'utf8');
 

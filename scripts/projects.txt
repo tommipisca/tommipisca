@@ -1,0 +1,9 @@
+# Repositories shown in the profile README, one name per line (case-insensitive).
+# Only public repositories are used: a private name listed here is skipped.
+# Cards are ordered by last update; descriptions and topics can be overridden in projects.config.json.
+Pinboard
+ExamsTrack
+Expenses
+DashPrise
+PaperSieve
+ing-sw-2026-piscaglia-polise-pellizzari-polinelli

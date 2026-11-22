@@ -28,8 +28,10 @@
 <p align="center">
   <a href="https://github.com/tommipisca/Pinboard"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/card-pinboard-dark.svg"><img src="./assets/card-pinboard-light.svg" alt="Pinboard" width="49%"></picture></a>
   <a href="https://github.com/tommipisca/ExamsTrack"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/card-examstrack-dark.svg"><img src="./assets/card-examstrack-light.svg" alt="ExamsTrack" width="49%"></picture></a>
+  <br>
   <a href="https://github.com/tommipisca/Expenses"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/card-expenses-dark.svg"><img src="./assets/card-expenses-light.svg" alt="Expenses" width="49%"></picture></a>
   <a href="https://github.com/tommipisca/DashPrise"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/card-dashprise-dark.svg"><img src="./assets/card-dashprise-light.svg" alt="DashPrise" width="49%"></picture></a>
+  <br>
   <a href="https://github.com/tommipisca/PaperSieve"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/card-papersieve-dark.svg"><img src="./assets/card-papersieve-light.svg" alt="PaperSieve" width="49%"></picture></a>
   <a href="https://github.com/tommipisca/ing-sw-2026-piscaglia-polise-pellizzari-polinelli"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/card-ing-sw-2026-piscaglia-polise-pellizzari-polinelli-dark.svg"><img src="./assets/card-ing-sw-2026-piscaglia-polise-pellizzari-polinelli-light.svg" alt="Mesos" width="49%"></picture></a>
 </p>
