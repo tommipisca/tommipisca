@@ -1,31 +1,7 @@
 {
   "user": "tommipisca",
   "exclude": ["tommipisca"],
-  "overrides": {
-    "Pinboard": {
-      "description": "Windows app that pins macOS-style widgets to the desktop: clocks, calendar, countdown, system stats, photo frame and now playing. Updates itself from GitHub releases.",
-      "topics": ["wpf", "dotnet", "widgets", "velopack"]
-    },
-    "ExamsTrack": {
-      "description": "Plan exams and study tasks, track the grade average and estimate the graduation mark, with widgets, Live Activities and sync across iPhone, iPad and PC.",
-      "topics": ["swiftui", "widgetkit", "electron"]
-    },
-    "Expenses": {
-      "description": "Track monthly spending by tag, with budgets and alerts, recurring expenses, Home and Lock Screen widgets and Wallet automation.",
-      "topics": ["swiftui", "app-intents", "finance"]
-    },
-    "DashPrise": {
-      "description": "Role-based operations dashboard with a live facility map, leave calendar, 3D device view and admin and HR tools, in English and Italian.",
-      "topics": ["fastapi", "sqlmodel", "threejs"]
-    },
-    "PaperSieve": {
-      "description": "Search arXiv across categories, filter by keyword, author or category, save favorites and export BibTeX. Built to WCAG 2.1 AA.",
-      "topics": ["flask", "arxiv", "accessibility"]
-    },
-    "ing-sw-2026-piscaglia-polise-pellizzari-polinelli": {
-      "name": "Mesos",
-      "description": "Digital version of a board game, developed as a university team project.",
-      "topics": ["java", "team-project"]
-    }
+  "displayNames": {
+    "ing-sw-2026-piscaglia-polise-pellizzari-polinelli": "Mesos"
   }
 }

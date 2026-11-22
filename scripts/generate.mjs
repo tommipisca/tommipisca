@@ -88,11 +88,10 @@ async function loadRepos() {
   const found = new Set(repos.map((r) => r.name.toLowerCase()));
   for (const n of wanted) if (!found.has(n.toLowerCase())) console.warn(`Skipped "${n}": not a public, non-fork repository of ${USER}`);
   for (const r of repos) {
-    const o = config.overrides[r.name] || {};
-    r.displayName = o.name || r.name;
-    // The repository's own description and topics win; projects.config.json is only a fallback.
-    r.desc = r.description || o.description || '';
-    r.tags = r.topics?.length ? r.topics : o.topics || [];
+    // Description and topics come only from the repository itself.
+    r.displayName = config.displayNames?.[r.name] || r.name;
+    r.desc = r.description || '';
+    r.tags = r.topics || [];
     r.languagesBytes = (await gh(`/repos/${USER}/${r.name}/languages`)) || {};
     const releases = (await gh(`/repos/${USER}/${r.name}/releases?per_page=100`)) || [];
     const published = releases.filter((x) => !x.draft);

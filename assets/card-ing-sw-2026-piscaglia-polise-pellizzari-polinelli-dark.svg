@@ -14,9 +14,7 @@
   <rect x="336" y="24" width="84" height="20" rx="10" fill="none" stroke="#3d444d"/>
   <text x="378" y="38" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#9198a1">no release</text>
   <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">Mesos, the board game, brought to the screen in Java.</text><text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">Built as a team project for the Software Engineering</text><text x="20" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">course at Politecnico di Milano.</text>
-  <rect x="20" y="122" width="42.64" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
-      <text x="41.32" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">java</text><rect x="68.64" y="122" width="91.92" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
-      <text x="114.6" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">team-project</text>
+  
   <circle cx="25" cy="166" r="5" fill="#b07219"/>
   <text x="36" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12" fill="#9198a1">Java</text>
   <text x="82.88" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12" fill="#9198a1">★ 0   ·   updated 4 months ago</text></svg>
