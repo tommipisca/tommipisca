@@ -90,7 +90,8 @@ async function loadRepos() {
   for (const r of repos) {
     const o = config.overrides[r.name] || {};
     r.displayName = o.name || r.name;
-    r.desc = o.description || r.description || '';
+    // The repository's own description and topics win; projects.config.json is only a fallback.
+    r.desc = r.description || o.description || '';
     r.tags = r.topics?.length ? r.topics : o.topics || [];
     r.languagesBytes = (await gh(`/repos/${USER}/${r.name}/languages`)) || {};
     const releases = (await gh(`/repos/${USER}/${r.name}/releases?per_page=100`)) || [];

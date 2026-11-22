@@ -1,6 +1,7 @@
 # Repositories shown in the profile README, one name per line (case-insensitive).
 # Only public repositories are used: a private name listed here is skipped.
-# Cards are ordered by last update; descriptions and topics can be overridden in projects.config.json.
+# Cards are ordered by last update. Description and topics come from each repository;
+# projects.config.json is used only when a repository has none.
 Pinboard
 ExamsTrack
 Expenses
