@@ -6,10 +6,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1600&color=6C63FF&center=true&vCenter=true&width=620&lines=Backend%2C+desktop+%26+mobile+apps;Turning+ideas+into+useful+software" alt="Backend, desktop & mobile apps · Turning ideas into useful software">
 </p>
 
-<p align="center">
-  I like turning ideas into software people actually use, and learning whatever it takes to get there.
-</p>
-
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-0-dark.svg"><img src="./assets/divider-0-light.svg" alt="" width="100%"></picture></p>
 
 ## About me
