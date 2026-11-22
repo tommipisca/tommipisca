@@ -156,7 +156,7 @@ function footer(t) {
 // A yellow character with an opening and closing mouth crosses each divider, eating the dots.
 // Each divider is its own image; divider i starts after i * SLOT seconds and runs in the opposite
 // direction of the previous one, so together they look like one character zigzagging down the page.
-const DIVIDERS = 6, SLOT = 4, CYCLE = DIVIDERS * SLOT, START = -120, END = 1020;
+const DIVIDERS = 5, SLOT = 4, CYCLE = DIVIDERS * SLOT, START = -120, END = 1020;
 function chomp(t, i) {
   const left = i % 2 === 1;
   const pct = ((SLOT / CYCLE) * 100).toFixed(3);

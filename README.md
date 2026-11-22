@@ -43,23 +43,19 @@
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-3-dark.svg"><img src="./assets/divider-3-light.svg" alt="" width="100%"></picture></p>
 
-## GitHub stats
+## Tech stack
 
 <p align="center">
   <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/languages-dark.svg"><img src="./assets/languages-light.svg" alt="Most used languages across public repositories" width="100%"></picture>
 </p>
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-4-dark.svg"><img src="./assets/divider-4-light.svg" alt="" width="100%"></picture></p>
-
-## Tech stack
-
 <p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=swift,py,java,c,cs,dotnet,js,html,css,flask,fastapi,electron,sqlite,threejs,linux,git,figma&perline=9" alt="Swift, Python, Java, C, C#, .NET, JavaScript, HTML, CSS, Flask, FastAPI, Electron, SQLite, Three.js, Linux, Git and Figma">
-  </a>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=swift,py,java,c,cs,dotnet,js,html,css" alt="Swift, Python, Java, C, C#, .NET, JavaScript, HTML and CSS"></a>
+  <br>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=flask,fastapi,electron,sqlite,threejs,linux,git,figma" alt="Flask, FastAPI, Electron, SQLite, Three.js, Linux, Git and Figma"></a>
 </p>
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-5-dark.svg"><img src="./assets/divider-5-light.svg" alt="" width="100%"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-4-dark.svg"><img src="./assets/divider-4-light.svg" alt="" width="100%"></picture></p>
 
 ## Contact
 

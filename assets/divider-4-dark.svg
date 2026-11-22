@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="24" viewBox="0 0 900 24" role="img" aria-label="Divider">
   <style>
-    .s { transform: translateX(-120px); animation: move 24s linear 16.00s infinite; }
-    @keyframes move { 0% { transform: translateX(-120px); } 16.667% { transform: translateX(1020px); } 100% { transform: translateX(1020px); } }
+    .s { transform: translateX(-120px); animation: move 20s linear 16.00s infinite; }
+    @keyframes move { 0% { transform: translateX(-120px); } 20.000% { transform: translateX(1020px); } 100% { transform: translateX(1020px); } }
     .jt { animation: jt .35s ease-in-out infinite alternate; } @keyframes jt { to { transform: rotate(-38deg); } }
     .jb { animation: jb .35s ease-in-out infinite alternate; } @keyframes jb { to { transform: rotate(38deg); } }
-    .p { transform-box: fill-box; transform-origin: center; animation: eat 24s linear infinite; }
+    .p { transform-box: fill-box; transform-origin: center; animation: eat 20s linear infinite; }
     @keyframes eat { 0% { opacity: 0; transform: scale(.2); } 62% { opacity: 0; transform: scale(.2); } 72%, 100% { opacity: 1; transform: scale(1); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
