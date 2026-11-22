@@ -128,7 +128,7 @@ function header(t) {
     <path class="w1" fill="#fff" fill-opacity="0.12" d="M-60 150 Q 90 110 240 150 T 540 150 T 840 150 T 1140 150 V 200 H -60 Z"/>
     <path class="w2" fill="#fff" fill-opacity="0.18" d="M-60 170 Q 75 140 210 170 T 480 170 T 750 170 T 1020 170 V 200 H -60 Z"/>
     <text x="450" y="92" text-anchor="middle" fill="#fff" font-family="${FONT}" font-weight="700" font-size="46">Hi, I'm Tommaso 👋</text>
-    <text x="450" y="130" text-anchor="middle" fill="#fff" fill-opacity="0.88" font-family="${FONT}" font-weight="500" font-size="20">Computer Science Engineering, Politecnico di Milano</text>
+    <text x="450" y="130" text-anchor="middle" fill="#fff" fill-opacity="0.88" font-family="${FONT}" font-weight="500" font-size="20">Computer Science and Engineering @ Politecnico di Milano</text>
   </g>`, "Hi, I'm Tommaso");
 }
 
@@ -312,8 +312,7 @@ if (!repos.length) throw new Error('No public repositories found');
 
 await saveThemed('header', header);
 await saveThemed('footer', footer);
-await saveThemed('about', about);
-for (let i = 0; i < DIVIDERS; i++) await saveThemed(`divider-${i}`, (t) => chomp(t, i));
+await saveThemed('about', about);for (let i = 0; i < DIVIDERS; i++) await saveThemed(`divider-${i}`, (t) => chomp(t, i));
 await saveThemed('now', (t) => now(t, repos[0]));
 
 const slug = (r) => r.name.toLowerCase();

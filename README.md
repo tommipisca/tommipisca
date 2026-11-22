@@ -64,9 +64,9 @@
 </p>
 
 <p align="center">
-  <a href="mailto:tommaso.piscaglia@gmail.com"><img src="https://img.shields.io/badge/Email-tommaso.piscaglia%40gmail.com-6C63FF?style=for-the-badge&logo=gmail&logoColor=white" alt="Email: tommaso.piscaglia@gmail.com"></a>
-  <a href="https://www.linkedin.com/in/tommaso-piscaglia-75986832b/"><img src="https://img.shields.io/badge/LinkedIn-Tommaso_Piscaglia-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn: Tommaso Piscaglia"></a>
-  <a href="https://github.com/tommipisca"><img src="https://img.shields.io/badge/GitHub-%40tommipisca-24292f?style=for-the-badge&logo=github&logoColor=white" alt="GitHub: @tommipisca"></a>
+  <a href="mailto:tommaso.piscaglia@gmail.com"><img src="./assets/badge-email.svg" height="30" alt="Email: tommaso.piscaglia@gmail.com"></a>
+  <a href="https://www.linkedin.com/in/tommaso-piscaglia-75986832b/"><img src="./assets/badge-linkedin.svg" height="30" alt="LinkedIn: Tommaso Piscaglia"></a>
+  <a href="https://github.com/tommipisca"><img src="./assets/badge-github.svg" height="30" alt="GitHub: @tommipisca"></a>
 </p>
 
 <p align="center">
