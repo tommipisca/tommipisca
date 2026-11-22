@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" role="img" aria-label="Hi, I'm Tommaso">
+  <style>
+    .w1 { animation: drift 9s ease-in-out infinite alternate; }
+    .w2 { animation: drift 7s ease-in-out infinite alternate-reverse; }
+    @keyframes drift { from { transform: translateX(-60px); } to { transform: translateX(0); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="hg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#6C63FF"/><stop offset="1" stop-color="#0EA5A4"/></linearGradient>
+    <clipPath id="hc"><rect width="900" height="200" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#hc)">
+    <rect width="900" height="200" fill="url(#hg)"/>
+    <path class="w1" fill="#fff" fill-opacity="0.12" d="M-60 150 Q 90 110 240 150 T 540 150 T 840 150 T 1140 150 V 200 H -60 Z"/>
+    <path class="w2" fill="#fff" fill-opacity="0.18" d="M-60 170 Q 75 140 210 170 T 480 170 T 750 170 T 1020 170 V 200 H -60 Z"/>
+    <text x="450" y="92" text-anchor="middle" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-weight="700" font-size="46">Hi, I'm Tommaso 👋</text>
+    <text x="450" y="128" text-anchor="middle" fill="#fff" fill-opacity="0.85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-weight="600" font-size="17" letter-spacing="2">COMPUTER SCIENCE ENGINEERING · POLIMI</text>
+  </g></svg>
