@@ -14,7 +14,10 @@
   <rect x="336" y="24" width="84" height="20" rx="10" fill="none" stroke="#3d444d"/>
   <text x="378" y="38" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#9198a1">no release</text>
   <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">Find the arXiv papers that matter: filter by keyword,</text><text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">author or category, save your favorites and export them to</text><text x="20" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">BibTeX. Built to WCAG 2.1 AA.</text>
-  
+  <rect x="20" y="122" width="98.08000000000001" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
+      <text x="69.04" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">accessibility</text><rect x="124.08000000000001" y="122" width="48.800000000000004" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
+      <text x="148.48000000000002" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">arxiv</text><rect x="178.88000000000002" y="122" width="48.800000000000004" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
+      <text x="203.28000000000003" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">flask</text>
   <circle cx="25" cy="166" r="5" fill="#3572A5"/>
   <text x="36" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12" fill="#9198a1">Python</text>
   <text x="96.32000000000001" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12" fill="#9198a1">★ 0   ·   updated 3 months ago</text></svg>

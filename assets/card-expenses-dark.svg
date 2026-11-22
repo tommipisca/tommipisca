@@ -14,7 +14,10 @@
   <rect x="336" y="24" width="84" height="20" rx="10" fill="none" stroke="#3d444d"/>
   <text x="378" y="38" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#9198a1">no release</text>
   <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">Know where your money goes each month: spending by tag,</text><text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">budgets with alerts, recurring expenses, Home and Lock</text><text x="20" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13" fill="#9198a1">Screen widgets, and Wallet automation.</text>
-  
+  <rect x="20" y="122" width="85.76" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
+      <text x="62.88" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">app-intents</text><rect x="111.76" y="122" width="61.120000000000005" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
+      <text x="142.32" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">finance</text><rect x="178.88" y="122" width="61.120000000000005" height="20" rx="10" fill="#4493f8" fill-opacity="0.12"/>
+      <text x="209.44" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#4493f8">swiftui</text>
   <circle cx="25" cy="166" r="5" fill="#F05138"/>
   <text x="36" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12" fill="#9198a1">Swift</text>
   <text x="89.6" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12" fill="#9198a1">★ 0   ·   updated 8 days ago</text></svg>
