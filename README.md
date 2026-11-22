@@ -14,15 +14,13 @@
   <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/about-dark.svg"><img src="./assets/about-light.svg" alt="Degree path: BSc 2023–2026, then MSc 2026–2028 · Based in Italy · Building tools I'd use myself: desktop widgets, study planners, dashboards · Curious about new languages, frameworks and how things work under the hood" width="100%"></picture>
 </p>
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-1-dark.svg"><img src="./assets/divider-1-light.svg" alt="" width="100%"></picture></p>
-
 <!-- NOW:START -->
 <p align="center">
   <a href="https://github.com/tommipisca/Pinboard"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/now-dark.svg"><img src="./assets/now-light.svg" alt="Currently working on Pinboard" width="100%"></picture></a>
 </p>
 <!-- NOW:END -->
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-2-dark.svg"><img src="./assets/divider-2-light.svg" alt="" width="100%"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-1-dark.svg"><img src="./assets/divider-1-light.svg" alt="" width="100%"></picture></p>
 
 ## Projects
 
@@ -37,7 +35,7 @@
 </p>
 <!-- PROJECTS:END -->
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-3-dark.svg"><img src="./assets/divider-3-light.svg" alt="" width="100%"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-2-dark.svg"><img src="./assets/divider-2-light.svg" alt="" width="100%"></picture></p>
 
 ## Tech stack
 
@@ -51,7 +49,7 @@
   <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=flask,fastapi,electron,sqlite,threejs,linux,git,figma" alt="Flask, FastAPI, Electron, SQLite, Three.js, Linux, Git and Figma"></a>
 </p>
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-4-dark.svg"><img src="./assets/divider-4-light.svg" alt="" width="100%"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/divider-3-dark.svg"><img src="./assets/divider-3-light.svg" alt="" width="100%"></picture></p>
 
 ## Contact
 

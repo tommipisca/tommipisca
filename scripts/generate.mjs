@@ -156,7 +156,7 @@ function footer(t) {
 // A yellow character with an opening and closing mouth crosses each divider, eating the dots.
 // Each divider is its own image; divider i starts after i * SLOT seconds and runs in the opposite
 // direction of the previous one, so together they look like one character zigzagging down the page.
-const DIVIDERS = 5, SLOT = 4, CYCLE = DIVIDERS * SLOT, START = -120, END = 1020;
+const DIVIDERS = 4, SLOT = 4, CYCLE = DIVIDERS * SLOT, START = -120, END = 1020;
 function chomp(t, i) {
   const left = i % 2 === 1;
   const pct = ((SLOT / CYCLE) * 100).toFixed(3);
@@ -227,18 +227,22 @@ function about(t) {
 // ---------- currently working on ----------
 function now(t, repo) {
   const msg = repo.lastCommit.length > 90 ? repo.lastCommit.slice(0, 89) + '…' : repo.lastCommit;
-  return svg(900, 92, `
+  // Same look as the About me cards (border, top bar, tinted icon box), full width; the dot pulses.
+  const W = 900, H = 92;
+  return svg(W, H, `
   <style>
-    .ring { transform-origin: 26px 46px; animation: pulse 2s ease-out infinite; }
+    .ring { transform-origin: 36px 38px; animation: pulse 2s ease-out infinite; }
     @keyframes pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.6); opacity: 0; } }
     ${REDUCED}
   </style>
-  <rect x="0.5" y="0.5" width="899" height="91" rx="12" fill="${t.subtle}" stroke="${t.border}"/>
-  <circle class="ring" cx="26" cy="46" r="5" fill="${t.teal}"/>
-  <circle cx="26" cy="46" r="5" fill="${t.teal}"/>
-  <text x="48" y="29" font-family="${FONT}" font-size="12.5" font-weight="600" fill="${t.muted}">Currently working on</text>
-  <text x="48" y="52" font-family="${FONT}" font-size="15" fill="${t.fg}"><tspan font-weight="700" fill="${t.link}">${esc(repo.displayName)}</tspan><tspan fill="${t.muted}"> · last push ${esc(ago(repo.pushed_at))}</tspan></text>
-  <text x="48" y="73" font-family="${MONO}" font-size="12.5" fill="${t.muted}">“${esc(msg)}”</text>`, `Currently working on ${repo.displayName}`);
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="12" fill="${t.bg}" stroke="${t.border}"/>
+  ${topBar(t, W, 'n').replace('height="100%"', `height="${H - 1}"`)}
+  <rect x="16" y="18" width="40" height="40" rx="10" fill="${t.teal}" fill-opacity="0.14"/>
+  <circle class="ring" cx="36" cy="38" r="5" fill="${t.teal}"/>
+  <circle cx="36" cy="38" r="5" fill="${t.teal}"/>
+  <text x="72" y="33" font-family="${FONT}" font-size="12.5" font-weight="600" fill="${t.muted}">Currently working on</text>
+  <text x="72" y="53" font-family="${FONT}" font-size="14" fill="${t.fg}"><tspan font-weight="700" fill="${t.link}">${esc(repo.displayName)}</tspan><tspan fill="${t.muted}"> · last push ${esc(ago(repo.pushed_at))}</tspan></text>
+  <text x="72" y="72" font-family="${MONO}" font-size="12.5" fill="${t.muted}">“${esc(msg)}”</text>`, `Currently working on ${repo.displayName}`);
 }
 
 // ---------- project card ----------

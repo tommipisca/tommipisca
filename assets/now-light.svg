@@ -1,12 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="92" viewBox="0 0 900 92" role="img" aria-label="Currently working on Pinboard">
   <style>
-    .ring { transform-origin: 26px 46px; animation: pulse 2s ease-out infinite; }
+    .ring { transform-origin: 36px 38px; animation: pulse 2s ease-out infinite; }
     @keyframes pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.6); opacity: 0; } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-  <rect x="0.5" y="0.5" width="899" height="91" rx="12" fill="#f6f8fa" stroke="#d1d9e0"/>
-  <circle class="ring" cx="26" cy="46" r="5" fill="#0EA5A4"/>
-  <circle cx="26" cy="46" r="5" fill="#0EA5A4"/>
-  <text x="48" y="29" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#59636e">Currently working on</text>
-  <text x="48" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" fill="#1f2328"><tspan font-weight="700" fill="#0969da">Pinboard</tspan><tspan fill="#59636e"> · last push 8 days ago</tspan></text>
-  <text x="48" y="73" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#59636e">“Update the README for 0.3.0”</text></svg>
+  <rect x="0.5" y="0.5" width="899" height="91" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
+  
+  <defs>
+    <linearGradient id="ng" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#6C63FF"/><stop offset="0.25" stop-color="#0EA5A4"/><stop offset="0.5" stop-color="#6C63FF"/>
+      <stop offset="0.75" stop-color="#0EA5A4"/><stop offset="1" stop-color="#6C63FF"/>
+    </linearGradient>
+    <clipPath id="nc"><rect x="0.5" y="0.5" width="899" height="91" rx="12"/></clipPath>
+  </defs>
+  <g clip-path="url(#nc)"><rect x="0" y="0" width="1800" height="3" fill="url(#ng)"/></g>
+  <rect x="16" y="18" width="40" height="40" rx="10" fill="#0EA5A4" fill-opacity="0.14"/>
+  <circle class="ring" cx="36" cy="38" r="5" fill="#0EA5A4"/>
+  <circle cx="36" cy="38" r="5" fill="#0EA5A4"/>
+  <text x="72" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#59636e">Currently working on</text>
+  <text x="72" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328"><tspan font-weight="700" fill="#0969da">Pinboard</tspan><tspan fill="#59636e"> · last push 8 days ago</tspan></text>
+  <text x="72" y="72" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" fill="#59636e">“Update the README for 0.3.0”</text></svg>
