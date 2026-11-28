@@ -70,5 +70,5 @@
 </p>
 
 <!-- UPDATED:START -->
-<p align="center"><sub>Updated automatically every night · last run Nov 27, 2026</sub></p>
+<p align="center"><sub>Updated automatically every night · last run Nov 28, 2026</sub></p>
 <!-- UPDATED:END -->
